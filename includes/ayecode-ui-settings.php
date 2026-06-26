@@ -1186,6 +1186,9 @@ if ( ! class_exists( 'AyeCode_UI_Settings' ) ) {
 				echo ' body.modal-open #adminmenuwrap{z-index:999} body.modal-open #wpadminbar{z-index:1025}';
 			}
 
+			/* Prevent the backdrop from covering the modal inside a sticky element */
+			echo 'body.modal-open .sticky:has(.modal),body.modal-open .sticky-top:has(.modal){position:static!important}';
+
 			$custom_css = '';
 
 			if ( $aui_bs5 && defined( 'BLOCKSTRAP_VERSION' ) && $bs_custom_css ) {
